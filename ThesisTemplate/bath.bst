@@ -1419,7 +1419,7 @@ FUNCTION {format.lab.names}
       nameptr #1 >
         {
           nameptr #2 =
-          numnames #3 > and
+          numnames #2 > and
             { "others" 't :=
               #1 'namesleft := }
             'skip$
