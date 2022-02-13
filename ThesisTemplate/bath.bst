@@ -61,7 +61,7 @@ FUNCTION {output.nonnull}
   output.state mid.sentence =
     { ", " * write$ }
     { output.state after.block =
-        { add.period$ write$
+        { write$
           newline$
           "\newblock " write$
         }
