@@ -61,7 +61,7 @@ FUNCTION {output.nonnull}
   output.state mid.sentence =
     { ", " * write$ }
     { output.state after.block =
-        { add.period$ write$
+        { write$
           newline$
           "\newblock " write$
         }
@@ -655,13 +655,13 @@ FUNCTION {word.in}
   " " * }
 
 FUNCTION {format.date}
-{ year "year" bibinfo.check duplicate$ empty$
-    {
-    }
-    'skip$
-  if$
-  extra.label *
+{ year empty$
+  { "" }
+  { year " (" swap$ * extra.label * ")" *}
+if$
+before.all 'output.state :=
 }
+  
 FUNCTION {format.btitle}
 { title
   duplicate$ empty$ 'skip$
